@@ -208,11 +208,13 @@ export default function OrderForm({ designUrl }: { designUrl: string }) {
             name="country"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>City</FormLabel>
+                <FormLabel>Country</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter country code(Eg. IN, US etc.)"
                     {...field}
+                    min={2}
+                    max={2}
                     required
                   />
                 </FormControl>
