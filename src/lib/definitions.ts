@@ -17,7 +17,10 @@ export const orderFormSchema = z.object({
   email: z.string().email({ message: "Enter a valid email address" }),
   city: z.string().min(1, { message: "Enter your city" }),
   region: z.string().min(1, { message: "Enter your region" }),
-  country: z.string().min(1, { message: "Enter your country code" }),
+  country: z
+    .string()
+    .min(2, { message: "Enter a valid country code" })
+    .max(2, { message: "Country code cannot exceed 2 letter" }),
   zip: z.string().min(1, { message: "Enter your zip code" }),
   placement: z.enum(["front", "back"]),
 });

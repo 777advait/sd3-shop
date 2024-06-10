@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       : await createPrintifyOrder(body);
 
   if (order?.error) {
-    NextResponse.json(
+    return NextResponse.json(
       { error: "An unexpected error occurred" },
       { status: 500 }
     );
